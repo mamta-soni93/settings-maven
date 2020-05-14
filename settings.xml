@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <servers>
+        <!--        <server>
+            <id>sdiCommon</id>
+            <username>WrkOmf3P</username>
+  	<password>J+A2M59w7Ac/kZQpMO2gE49nATw27gFJiKmzu3lqf7Mp</password>
+        </server>
+	<server>
+            <id>mBankingRelease</id>
+            <username>WrkOmf3P</username>
+            <password>J+A2M59w7Ac/kZQpMO2gE49nATw27gFJiKmzu3lqf7Mp</password>
+        </server> -->
+        <!--ARTIFACTORY CREDENTIALS-->
+        <server>
+            <id>biCIDeploymentAF</id>
+            <username>palash.kapoor</username>
+            <password>AKCp5btVRc2EAwgij2qZPtXH6ZGr8UFJaZSifw3DbzvKC8q6ZrhNHWpbW36ZAJkQnybq7TfP8</password>
+        </server>
+        <server>
+            <id>sdiCIDeploymentAF</id>
+            <username>palash.kapoor</username>
+            <password>AKCp5btVRc2EAwgij2qZPtXH6ZGr8UFJaZSifw3DbzvKC8q6ZrhNHWpbW36ZAJkQnybq7TfP8</password>
+        </server>
+        <server>
+            <id>sdiSnapshotDeploymentAF</id>
+            <username>palash.kapoor</username>
+            <password>AKCp5btVRc2EAwgij2qZPtXH6ZGr8UFJaZSifw3DbzvKC8q6ZrhNHWpbW36ZAJkQnybq7TfP8</password>
+        </server>
+        <server>
+            <id>sdiCommonAF</id>
+            <username>palash.kapoor</username>
+            <password>AKCp5btVRc2EAwgij2qZPtXH6ZGr8UFJaZSifw3DbzvKC8q6ZrhNHWpbW36ZAJkQnybq7TfP8</password>
+        </server>
+        <server>
+            <username>lc5577618</username>
+            <password>AKCp5ekmqaeZrji1YM8nymGrMqbLdTNce2vLp357oWwqC2i93jd2GfJBBfcUBcUW5kxbndXoM</password>
+            <id>central</id>
+        </server>
+        <server>
+            <username>lc5577618</username>
+            <password>AKCp5ekmqaeZrji1YM8nymGrMqbLdTNce2vLp357oWwqC2i93jd2GfJBBfcUBcUW5kxbndXoM</password>
+            <id>snapshots</id>
+        </server>
+    </servers>
+    <profiles>
+        <profile>
+            <id>local</id>
+            <properties>
+                <SERVER_VERSION>LOCAL</SERVER_VERSION>
+                <CI_BUILD_NUMBER>SNAPSHOT</CI_BUILD_NUMBER>
+            </properties>
+            <repositories>
+                <repository>
+                    <id>sdiCIDeploymentAF</id>
+                    <url>https://repository.fismobile.com/artifactory/sdi-ci/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>sdiSnapshotDeploymentAF</id>
+                    <url>https://repository.fismobile.com:443/artifactory/sdi-snapshot</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>sdiCommonAF</id>
+                    <url>https://repository.fismobile.com/artifactory/sdi-common/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>biCIDeploymentAF</id>
+                    <url>https://repository.fismobile.com/artifactory/bi-ci/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <name>ethos-maven-dev</name>
+                    <url>https://artifactory.fis.dev/artifactory/ethos-maven-dev</url>
+                </repository>
+                <repository>
+                    <snapshots />
+                    <id>snapshots</id>
+                    <name>ethos-maven-release</name>
+                    <url>https://artifactory.fis.dev/artifactory/ethos-maven-release</url>
+                </repository>
+                <repository>
+                    <snapshots />
+                    <id>snapshots</id>
+                    <name>ethos-maven-release-local</name>
+                    <url>https://artifactory.fis.dev/artifactory/ethos-maven-release-local</url>
+                </repository>
+                <!-- <repository>
+                    <snapshots />
+                    <id>snapshots</id>
+                    <name>ethos-maven-snapshot-local</name>
+                    <url>https://artifactory.fis.dev/artifactory/ethos-maven-snapshot-local</url>
+                </repository> -->
+            </repositories>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>local</activeProfile>
+    </activeProfiles>
+</settings>
